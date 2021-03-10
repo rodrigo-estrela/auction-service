@@ -12,11 +12,11 @@ provider:
   stage: ${opt:stage, 'dev'}
   region: 'us-east-2'
   iamRoleStatements:
-    - Effect: 
+    - Effect: Allow
       Action:
-        - dynamodb: PutItem
+        - dynamodb:PutItem
       Resource:
-        - arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountID}:table/AuctionsTable
+        - arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/AuctionsTable
 
 
 resources:
