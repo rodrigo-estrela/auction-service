@@ -13,6 +13,11 @@ async function createAuction (event, context) {
     createdAt: new Date().toISOString()
   };
 
+  await dynamodb.put({
+    TableName: 'AuctionsTable',
+    Item: auction,
+  }).promise();
+
   return {
     statusCode: 201,
     body: JSON.stringify(auction),
